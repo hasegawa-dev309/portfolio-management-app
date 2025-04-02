@@ -1,74 +1,70 @@
-# 📊 ポートフォリオ管理アプリ（米国株版）
+# Getting Started with Create React App
 
-## 🎯 このアプリについて
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-投資初心者が「自分の保有株が今どうなっているか」「売るべきか持ち続けるべきか」を直感的に把握できるように作成した、ポートフォリオ管理アプリ（米国株対応）です。
+## Available Scripts
 
-## 🧩 主な機能
+In the project directory, you can run:
 
-- ✅ 株式ティッカーを入力すると現在の株価を自動取得（yfinance）
-- ✅ 株数・取得価格を入力すると評価損益をドル・円で計算
-- ✅ 売り時かどうか（利益が出ているか）を◯✖️で表示
-- ✅ 保有銘柄一覧を表形式（table）で表示
-- ✅ 保有銘柄の合計損益を自動計算
-- ✅ ダークモード対応（切り替えボタンあり）
-- ✅ ブラウザにデータを自動保存（localStorage使用）
-- ✅ 1クリックで全銘柄を削除可能
+### `npm start`
 
-## 📁 構成と主要コード
-portfolio-app/
-├── frontend/             # React（ユーザー画面とロジック）
-│   ├── src/
-│   │   ├── App.js        # メインUIロジック・株管理・ダークモード・保存処理など
-│   │   └── index.js      # Reactのエントリーポイント
-│   ├── public/           # 公開リソース（HTML, 画像など）
-│   └── tailwind.config.js # Tailwind CSSの設定（ダークモード対応含む）
-│
-├── backend/              # FastAPI（株価・為替レートの取得API）
-│   └── main.py           # yfinanceと為替APIを使ったエンドポイント実装
-│
-└── README.md             # このアプリの概要・使い方・技術スタックなど
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-機能	　　　　　　　　　　　　　使用技術	　　　　　　　　        主なコードファイル
-株価取得・為替取得API	　　　　FastAPI + yfinance	     backend/main.py
-株の追加・損益計算	　　　　　　React	                 frontend/src/App.js
-ダークモード切り替え	　　　　React + Tailwind CSS	 App.js, tailwind.config.js
-保有株の保存（再読み込み対応）	LocalStorage	          App.js
-ポートフォリオ表の表示	　　　　React (JSX + state管理)	   App.js
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-## 🛠 使用技術
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-| フロントエンド | バックエンド | その他 |
-|----------------|--------------|--------|
-| React / Vite   | FastAPI      | TailwindCSS（ダークモード含む）<br>yfinance（株価・為替取得）<br>localStorage（データ保持） |
+### `npm run build`
 
-## 🎨 UIイメージ
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- ダークモード切り替え対応
-- 表形式で見やすく整理された銘柄情報
-- 損益は緑（プラス）・赤（マイナス）で視覚的に分かる配色設計
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🧠 工夫したポイント
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- 売り時表示や損益の自動計算など、初心者でも使いやすいUXを重視しました。
-- 現在価格と為替レートはAPIで都度取得し、常に最新データに基づく損益を算出。
-- データの保持にはlocalStorageを用い、ページを閉じてもポートフォリオが維持される仕組みを導入。
+### `npm run eject`
 
-## 🔥 こだわり
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-- 「株価が上がってるのか？」「今売ったらいくら利益か？」をすぐに判断できる**ことを大切にしています。
-- 表形式で整理＋売り時の◯✖️表示により、情報が直感的に伝わるようにしました。
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## 📚 今後のアップデート予定（挑戦したいこと）
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- 日本株への対応
-- 登録銘柄のデータベース保存（バックエンド＋DB連携）
-- LINE通知や収益率ランキングなどの実装
-- 投資判断アプリとの統合（売買判断付きのポートフォリオ）
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## ✨ 自己PR
+## Learn More
 
-本アプリは、文系未経験からエンジニア転身を目指す中で「学びながら作る」をテーマに開発しました。  
-株式投資に対するハードルを下げるUI設計・APIの活用・状態管理・スタイリングなど、ReactとFastAPIを用いたフルスタック構築の基礎を実践的に学べた経験です。  
-今後はさらなる機能追加と他アプリとの連携を通じて、ユーザーにとって本当に役立つツール作りを目指していきます。
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
